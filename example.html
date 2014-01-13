@@ -1,0 +1,302 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo by sushanth009</title>
+  
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+    
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+    
+  
+    
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+    
+  
+  <style type="text/css">
+    .post {
+    margin: 10px;
+    background: #EFEFEF;
+    padding: 10px;
+    }
+    b{
+        display: inline;
+    }
+  </style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+var postsObject = [{
+    "_id": "50f5f5d4014e045f000002",
+        "author": {
+        "name": "Chris Crawford",
+        "photo": "http://example.com/photo.jpg"
+    },
+        "status": "This is a sample message.",
+        "comments": [{
+        "_id": "5160eacbe4b020ec56a46844",
+            "text": "This is the content of the comment.",
+            "author": "Bob Hope"
+    }, {
+        "_id": "5160eacbe4b020ec56a46845",
+            "text": "This is the content of the comment.",
+            "author": "Bob Hope"
+    }]
+}, {
+    "_id": "50f5f5d4014e045f000003",
+        "author": {
+        "name": "Brown Robert",
+            "photo": "http://example.com/photo.jpg"
+    },
+        "status": "This is another sample message.",
+        "comments": [{
+        "_id": "5160eacbe4b020ec56a46846",
+            "text": "This is the content of the comment.",
+            "author": "Bob Hope"
+    }, {
+        "_id": "5160eacbe4b020ec56a46847",
+            "text": "This is the content of the comment.",
+            "author": "Bob Hope"
+    }]
+}];
+
+// Comment Model
+var Comment = Backbone.Model.extend({
+    idAttribute: '_id',
+    defaults: {
+        text: "",
+        author: ""
+    }
+});
+
+// Comments collection
+var Comments = Backbone.Collection.extend({
+    model: Comment
+});
+
+// Author Model
+var Author = Backbone.Model.extend({
+    defaults: {
+        text: "",
+        author: ""
+    }
+});
+
+// Post Model
+var Post = Backbone.Model.extend({
+    idAttribute: '_id',
+    defaults: {
+        author: "",
+        status: ""
+    },
+    parse: function (resp) {
+        // Create a Author model on the Post Model
+        this.author = new Author(resp.author || null, {
+            parse: true
+        });
+        // Delete from the response object as the data is
+        // alredy available on the  model
+        delete resp.author;
+        // Create a comments objecton model 
+        // that will hold the comments collection
+        this.comments = new Comments(resp.comments || null, {
+            parse: true
+        });
+        // Delete from the response object as the data is
+        // alredy available on the  model
+        delete resp.comments;
+
+        // return the response object 
+        return resp;
+    }
+})
+// Posts Collection 
+var Posts = Backbone.Collection.extend({
+    model: Post
+});
+
+var PostsListView = Backbone.View.extend({
+    el: "#container",
+    renderPostView: function(post) {
+        // Create a new postView
+        var postView = new PostView({
+            model : post
+        });
+        // Append it to the container
+        this.$el.append(postView.el);
+        postView.render();
+    },
+    render: function () {
+        var thisView = this;
+        // Iterate over each post Model
+        _.each(this.collection.models, function (post) {
+            // Call the renderPostView method
+            thisView.renderPostView(post);
+        });
+    }
+});
+
+
+var PostView = Backbone.View.extend({
+    className: "post",
+    template: _.template($("#post-template").html()),
+    renderComments: function() {
+        var commentsListView = new CommentsListView({
+            // Comments collection on the Post Model
+            collection : this.model.comments,
+            // Pass the container to which it is to be appended
+            el : $('.comments', this.$el)
+        });
+        commentsListView.render();        
+    },
+    render: function () {
+        this.$el.empty();
+        //  Extend the object toi contain both Post attributes
+        // and also the author attributes
+        this.$el.append(this.template(_.extend(this.model.toJSON(),
+            this.model.author.toJSON()
+       )));
+       // Render the comments for each Post
+       this.renderComments();
+    }
+});
+
+var CommentsListView = Backbone.View.extend({
+    renderCommentView: function(comment) {
+        // Create a new CommentView
+        var commentView = new CommentView({
+            model : comment
+        });
+        // Append it to the comments ul that is part
+        // of the view
+        this.$el.append(commentView.el);
+        commentView.render();
+    },
+    render: function () {
+        var thisView = this;
+        // Iterate over each Comment Model
+        _.each(this.collection.models, function (comment) {
+            // Call the renderCommentView method
+            thisView.renderCommentView(comment);
+        });
+    }
+});
+
+
+var CommentView = Backbone.View.extend({
+    tagName: "li",
+    className: "comment",
+    template: _.template($("#comment-template").html()),
+    render: function () {
+        this.$el.empty();
+        this.$el.append(this.template(this.model.toJSON()));
+    }
+});
+
+// Create a posts collection 
+var posts = new Posts(postsObject, {parse: true});
+
+// Pass it to the PostsListView
+var postsListView = new PostsListView({
+    collection: posts
+});
+// Render the view
+postsListView.render();
+
+});//]]>  
+
+</script>
+
+
+<style type="text/css"></style></head>
+<body>
+  <div id="container"><div class="post">
+    <div>
+        <b>Status: </b><span>This is a sample message.</span>
+    <div>
+    <div>
+        <b>Author: </b><span>Chris Crawford</span>
+        <img src="http://example.com/photo.jpg">
+    </div>
+    <ul class="comments"><li class="comment">
+    <div class="post">
+        <div>
+            <b>Comment: </b><span>This is the content of the comment.</span>
+        </div>
+        <div>
+            <b>Author: </b><span>Bob Hope</span>
+       </div>
+    </div>
+</li><li class="comment">
+    <div class="post">
+        <div>
+            <b>Comment: </b><span>This is the content of the comment.</span>
+        </div>
+        <div>
+            <b>Author: </b><span>Bob Hope</span>
+       </div>
+    </div>
+</li></ul>
+</div></div></div><div class="post">
+    <div>
+        <b>Status: </b><span>This is another sample message.</span>
+    <div>
+    <div>
+        <b>Author: </b><span>Brown Robert</span>
+        <img src="http://example.com/photo.jpg">
+    </div>
+    <ul class="comments"><li class="comment">
+    <div class="post">
+        <div>
+            <b>Comment: </b><span>This is the content of the comment.</span>
+        </div>
+        <div>
+            <b>Author: </b><span>Bob Hope</span>
+       </div>
+    </div>
+</li><li class="comment">
+    <div class="post">
+        <div>
+            <b>Comment: </b><span>This is the content of the comment.</span>
+        </div>
+        <div>
+            <b>Author: </b><span>Bob Hope</span>
+       </div>
+    </div>
+</li></ul>
+</div></div></div></div>
+
+<script type="text/template" id="post-template">
+    <div>
+        <b>Status: </b><span><%= status %></span>
+    <div>
+    <div>
+        <b>Author: </b><span><%= name %></span>
+        <img src="<%= photo %>"/>
+    </div>
+    <ul class="comments"></ul>
+</script>
+<script type="text/template" id="comment-template">
+    <div class='post'>
+        <div>
+            <b>Comment: </b><span><%= text %></span>
+        </div>
+        <div>
+            <b>Author: </b><span><%= author %></span>
+       </div>
+    </div>
+</script>
+    
+    
+  
+
+
+
+
+
+</body></html>

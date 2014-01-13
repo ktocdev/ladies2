@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<title>Inspiring Voice - Girl Singers You Should Love</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/template" id="artist-template">
+      <div>
+        <b>Name: </b><span><%= name %></span>
+      <div>
+      <ul class="albums"></ul>
+    </script>
+    <script type="text/template" id="album-template">
+      <div class='artist'>
+        <div>
+          <b>Album: </b><span><%= albumName %></span>
+        </div>
+      </div>
+    </script>
+  	<script src="lib/jquery.js"> </script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/backbone.js"></script>
+    <script src="js/artists.js"></script>
+    <script src="js/views/artist-list-view.js"></script>
+    <script src="js/views/artist-view.js"></script>
+    <script src="js/views/album-list-view.js"></script>
+    <script src="js/views/album-view.js"></script>
+    <script src="js/models.js"></script>
+    <script src="js/collections.js"></script>
+  </body>
+</html>
