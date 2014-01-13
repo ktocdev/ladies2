@@ -15,7 +15,10 @@ var Albums = Backbone.Collection.extend({
 var Artist = Backbone.Model.extend({
   idAttribute: '_id',
   defaults: {
-    name: ""
+    name: "",
+    fullName: "",
+    vocalType: "unknown",
+    love1: ""
   },
   parse: function (resp) {
     // Create a albums objecton model 

@@ -12,7 +12,7 @@ var ArtistView = Backbone.View.extend({
   },
   render: function () {
     this.$el.empty();
-    //  Extend the object toi contain both Artist attributes
+    //  Extend the object to contain both Artist attributes
     this.$el.append(this.template(_.extend(this.model.toJSON()
    )));
    // Render the albums for each Artist

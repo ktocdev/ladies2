@@ -1,10 +1,17 @@
-Backbone.View.prototype.close = function() {
-    console.log( 'Closing view ' + this );
+var ArtistDetailView = Backbone.View.extend({
+	//el: "#artist-detail-container",
+  className: "artist-detail",
+  template: _.template($("#artist-detail-template").html()),
 
-    if ( this.beforeClose ) {
-        this.beforeClose();
-    }
- 
-    this.remove();
-    this.unbind();
-}
+  initialize: function () {
+    this.render();
+  },
+
+  render: function () {
+  	console.log('artistDetailView render');
+  	this.$el.empty();
+    this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  }
+
+});

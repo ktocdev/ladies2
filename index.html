@@ -5,28 +5,52 @@
     <meta charset="utf-8">
   </head>
   <body>
+
     <div id="container"></div>
+    <div id="artist-detail-container"></div>
+
     <script type="text/template" id="artist-template">
       <div>
-        <b>Name: </b><span><%= name %></span>
+        <b>Name: </b><span><a href="#artists/<%= _id %>"><%= name %></a></span>
       <div>
       <ul class="albums"></ul>
     </script>
+
     <script type="text/template" id="album-template">
-      <div class='artist'>
-        <div>
-          <b>Album: </b><span><%= albumName %></span>
-        </div>
+      <div>
+        <b>Album: </b><span><%= albumName %></span>
       </div>
     </script>
+
+    <script type="text/template" id="artist-detail-template">
+      <div id="nav"></div>
+      <%= fullName %>
+    </script>
+
+    <script type="text/template" id="nav-template">
+      <ul class="nav">
+        <li class="bio"><a href="artists/:name/bio">Bio</a></li>
+        <li class="voice"><a href="artists/:name/voice">Voice</a></li>
+        <li class="music"><a href="artists/:name/music">Music</a></li>
+        <li class="love"><a href="artists/:name/love">Why I Love Her</a></li>
+      </ul>
+    </script>
+
   	<script src="lib/jquery.js"> </script>
     <script src="lib/underscore.js"></script>
     <script src="lib/backbone.js"></script>
+
     <script src="js/artists.js"></script>
+
     <script src="js/views/artist-list-view.js"></script>
     <script src="js/views/artist-view.js"></script>
+    <script src="js/views/artist-detail-view.js"></script>
     <script src="js/views/album-list-view.js"></script>
     <script src="js/views/album-view.js"></script>
+    <script src="js/views/nav-view.js"></script>
+
     <script src="js/models.js"></script>
+    <script src="js/main.js"></script>
+
   </body>
 </html>
