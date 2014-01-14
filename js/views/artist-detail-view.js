@@ -7,15 +7,8 @@ var ArtistDetailView = Backbone.View.extend({
 
   },
 
-  renderNavView: function () {
-  	this.navView = new NavView();
-    $('#nav').html(this.navView.el);
-  },
-
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
-    //console.log(this.$el);
-    //this.renderNavView();
   }
 
 });

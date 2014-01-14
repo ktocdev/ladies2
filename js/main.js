@@ -13,12 +13,12 @@ Backbone.View.prototype.close = function() {
 var AppRouter = Backbone.Router.extend({
 
   routes: {
-      ""                      : "list",
-      "artists/:id"           : "artistDetailView"//,
-      //"artists/:name/bio"     : "artist-bio-view",
-      //"artists/:name/voice"   : "artist-voice-view",
-      //"artists/:name/music"   : "artist-music-view",
-      //"artists/:name/love"    : "artist-love-view",
+      ""                          : "list",
+      "artists/:path"             : "artistDetailView",
+      "artists/:path/:section"    : "artistDetailSectionView",
+      //"artists/:path/:voice"    : "artistVoiceView",
+      //"artists/:path/:music"    : "artistMusicView",
+      //"artists/:path/:love"     : "artistLoveView",
   },
 
   initialize: function () {
@@ -30,12 +30,9 @@ var AppRouter = Backbone.Router.extend({
     
   },
 
-  artistDetailView: function (_id) {
-    var artistDetail = artists.get(_id);
+  artistDetailView: function (path) {
 
-    //var artistDetailView = new ArtistDetailView({
-    //  model : artistDetail
-    //}); 
+    var artistDetail = artists.get(path);
 
     this.showView('#artist-detail-container', new ArtistDetailView({
       model: artistDetail
@@ -45,6 +42,39 @@ var AppRouter = Backbone.Router.extend({
       model: artistDetail
     }));   
 
+  },
+
+  artistDetailSectionView: function (path, section) {
+    var artistDetail = artists.get(path),
+        artistViewSection = section;
+
+    switch (artistViewSection) {
+      case 'bio':
+        this.showView('#artist-detail-section', new ArtistBioView({
+          model: artistDetail
+        })); 
+        break;
+      case 'voice':
+        this.showView('#artist-detail-section', new ArtistVoiceView({
+          model: artistDetail
+        })); 
+        break;
+      case 'music':
+        this.showView('#artist-detail-section', new ArtistMusicView({
+          model: artistDetail
+        }));
+        break;
+      case 'love':
+        this.showView('#artist-detail-section', new ArtistLoveView({
+          model: artistDetail
+        }));
+        break;
+      default:
+        this.showView('#artist-detail-section', new ArtistBioView({
+          model: artistDetail
+        })); 
+        break;
+    }
   },
 
   showView: function (selector, view) {

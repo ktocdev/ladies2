@@ -11,7 +11,7 @@
 
     <script type="text/template" id="artist-template">
       <div>
-        <b>Name: </b><span><a href="#artists/<%= _id %>"><%= name %></a></span>
+        <b>Name: </b><span><a href="#artists/<%= path %>"><%= name %></a></span>
       <div>
       <ul class="albums"></ul>
     </script>
@@ -25,21 +25,38 @@
     <script type="text/template" id="artist-detail-template">
       <div id="nav"></div>
       <%= name %>
+      <div id="artist-detail-section"></div>
     </script>
 
     <script type="text/template" id="nav-template">
       <ul class="nav">
-        <li class="bio"><a href="artists/<%= path %>/bio">Bio</a></li>
-        <li class="voice"><a href="artists/<%= path %>/voice">Voice</a></li>
-        <li class="music"><a href="artists/<%= path %>/music">Music</a></li>
-        <li class="love"><a href="artists/<%= path %>/love">Why I Love Her</a></li>
+        <li class="bio"><a href="#artists/<%= path %>/bio">Bio</a></li>
+        <li class="voice"><a href="#artists/<%= path %>/voice">Voice</a></li>
+        <li class="music"><a href="#artists/<%= path %>/music">Music</a></li>
+        <li class="love"><a href="#artists/<%= path %>/love">Why I Love Her</a></li>
       </ul>
+    </script>
+
+    <script type="text/template" id="artist-bio-template">
+      <%= fullName %>
+    </script>
+
+    <script type="text/template" id="artist-voice-template">
+      <%= vocalType %>
+    </script>
+
+    <script type="text/template" id="artist-music-template">
+      albums here eventually
+    </script>
+
+    <script type="text/template" id="artist-love-template">
+      <%= love1 %>
     </script>
 
   	<script src="lib/jquery.js"> </script>
     <script src="lib/underscore.js"></script>
     <script src="lib/backbone.js"></script>
-
+    <script src="js/utils.js"></script>
     <script src="js/artists.js"></script>
 
     <script src="js/views/artist-list-view.js"></script>
@@ -48,6 +65,10 @@
     <script src="js/views/album-list-view.js"></script>
     <script src="js/views/album-view.js"></script>
     <script src="js/views/nav-view.js"></script>
+    <script src="js/views/artist-bio-view.js"></script>
+    <script src="js/views/artist-music-view.js"></script>
+    <script src="js/views/artist-love-view.js"></script>
+    <script src="js/views/artist-voice-view.js"></script>
 
     <script src="js/models.js"></script>
     <script src="js/main.js"></script>

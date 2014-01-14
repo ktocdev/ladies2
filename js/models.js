@@ -13,7 +13,7 @@ var Albums = Backbone.Collection.extend({
 
 // Artist Model
 var Artist = Backbone.Model.extend({
-  idAttribute: '_id',
+  idAttribute: 'path',
   defaults: {
     name: "",
     fullName: "",
