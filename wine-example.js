@@ -54,21 +54,21 @@ var AppRouter = Backbone.Router.extend({
     },
  
     before: function (callback) {
-        if (this.wineList) {
-            if (callback) callback.call(this);
-        } else {
-            this.wineList = new WineCollection();
-            var self = this;
-            this.wineList.fetch({
-                success: function () {
-                    var winelist = new WineListView({
-                        model: self.wineList
-                    }).render();
-                    $('#sidebar').html(winelist);
-                    if (callback) callback.call(self);
-                }
-            });
-        }
+      if (this.wineList) {
+        if (callback) callback.call(this);
+      } else {
+        this.wineList = new WineCollection();
+        var self = this;
+        this.wineList.fetch({
+          success: function () {
+            var winelist = new WineListView({
+              model: self.wineList
+            }).render();
+            $('#sidebar').html(winelist);
+            if (callback) callback.call(self);
+          }
+        });
+      }
     }
  
 });

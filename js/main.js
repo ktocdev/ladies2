@@ -1,12 +1,13 @@
-Backbone.View.prototype.close = function(listitem) {
+Backbone.View.prototype.close = function() {
   console.log( 'Closing view ' + this );
  
   if ( this.beforeClose ) {
     this.beforeClose();
   }
  
-  this.remove();
-  this.unbind();
+  this.remove(); 
+  this.off();
+
 }
 
 var AppRouter = Backbone.Router.extend({
@@ -32,19 +33,25 @@ var AppRouter = Backbone.Router.extend({
   artistDetailView: function (_id) {
     var artistDetail = artists.get(_id);
 
-    var artistDetailView = new ArtistDetailView({
-      model : artistDetail
-    }); 
+    //var artistDetailView = new ArtistDetailView({
+    //  model : artistDetail
+    //}); 
 
-    //this.showView('#artist-detail-container', new ArtistDetailView({
-    //  model: artistDetail
-    //}));  
+    this.showView('#artist-detail-container', new ArtistDetailView({
+      model: artistDetail
+    }));  
 
   },
 
   showView: function (selector, view) {
-    console.log('show view')
-    if (this.currentView) this.currentView.close();
+
+    // we should only call close when we hit the 'close' button of the artist detail view
+    // we will never really be able to switch between artists like we are now
+    // keeping this around for when we need it
+    
+    if (this.currentView){
+      //this.currentView.close();
+    } 
 
     $(selector).html(view.render());
     this.currentView = view;
