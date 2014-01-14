@@ -7,7 +7,6 @@ var ArtistBioView = Backbone.View.extend({
   },
 
   render: function () {
-  	console.log('test')
     this.$el.html(this.template(this.model.toJSON()));
   }
 

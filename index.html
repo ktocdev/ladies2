@@ -11,14 +11,13 @@
 
     <script type="text/template" id="artist-template">
       <div>
-        <b>Name: </b><span><a href="#artists/<%= path %>"><%= name %></a></span>
+        <a href="#artists/<%= path %>"><%= name %></a>
       <div>
-      <ul class="albums"></ul>
     </script>
 
     <script type="text/template" id="album-template">
       <div>
-        <b>Album: </b><span><%= albumName %></span>
+        <%= albumName %>
       </div>
     </script>
 
@@ -46,7 +45,7 @@
     </script>
 
     <script type="text/template" id="artist-music-template">
-      albums here eventually
+      <ul class="albums"></ul>
     </script>
 
     <script type="text/template" id="artist-love-template">

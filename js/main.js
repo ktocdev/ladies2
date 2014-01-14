@@ -1,24 +1,17 @@
 Backbone.View.prototype.close = function() {
   console.log( 'Closing view ' + this );
- 
   if ( this.beforeClose ) {
     this.beforeClose();
   }
- 
   this.remove(); 
   this.off();
-
 }
 
 var AppRouter = Backbone.Router.extend({
-
   routes: {
-      ""                          : "list",
-      "artists/:path"             : "artistDetailView",
-      "artists/:path/:section"    : "artistDetailSectionView",
-      //"artists/:path/:voice"    : "artistVoiceView",
-      //"artists/:path/:music"    : "artistMusicView",
-      //"artists/:path/:love"     : "artistLoveView",
+    ""                          : "list",
+    "artists/:path"             : "artistDetailView",
+    "artists/:path/:section"    : "artistDetailSectionView"
   },
 
   initialize: function () {
@@ -26,8 +19,7 @@ var AppRouter = Backbone.Router.extend({
   },
 
   list: function() {
-    console.log('list');
-    
+
   },
 
   artistDetailView: function (path) {
@@ -40,7 +32,11 @@ var AppRouter = Backbone.Router.extend({
 
     this.showView('#nav', new NavView({
       model: artistDetail
-    }));   
+    }));  
+
+    this.showView('#artist-detail-section', new ArtistBioView({
+      model: artistDetail
+    }));  
 
   },
 
@@ -79,7 +75,7 @@ var AppRouter = Backbone.Router.extend({
 
   showView: function (selector, view) {
 
-    // we should only call close when we hit the 'close' button of the artist detail view
+    // we should only call close when we hit the 'close' button of the artist detail view "overlay"
     // we will never really be able to switch between artists like we are now
     // keeping this around for when we need it
 
@@ -99,7 +95,3 @@ var AppRouter = Backbone.Router.extend({
   app = new AppRouter();
   Backbone.history.start();
 // });
-
-
-
-
