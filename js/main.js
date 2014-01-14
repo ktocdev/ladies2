@@ -1,3 +1,14 @@
+Backbone.View.prototype.close = function(listitem) {
+  console.log( 'Closing view ' + this );
+ 
+  if ( this.beforeClose ) {
+    this.beforeClose();
+  }
+ 
+  this.remove();
+  this.unbind();
+}
+
 var AppRouter = Backbone.Router.extend({
 
   routes: {
@@ -19,13 +30,26 @@ var AppRouter = Backbone.Router.extend({
   },
 
   artistDetailView: function (_id) {
-    console.log('artistDetailView');
+    var artistDetail = artists.get(_id);
 
-    var artistDetailView = new ArtistDetailView({_id: _id});
-    artistDetailView.get({success: function(){
-      $("#artist-detail-container").html(new ArtistDetailView({model: artist}).el);
-    }});
+    var artistDetailView = new ArtistDetailView({
+      model : artistDetail
+    }); 
 
+    //this.showView('#artist-detail-container', new ArtistDetailView({
+    //  model: artistDetail
+    //}));  
+
+  },
+
+  showView: function (selector, view) {
+    console.log('show view')
+    if (this.currentView) this.currentView.close();
+
+    $(selector).html(view.render());
+    this.currentView = view;
+   
+    return view;
   }
 
 });
@@ -34,5 +58,7 @@ var AppRouter = Backbone.Router.extend({
   app = new AppRouter();
   Backbone.history.start();
 // });
+
+
 
 
