@@ -24,15 +24,15 @@
 
     <script type="text/template" id="artist-detail-template">
       <div id="nav"></div>
-      <%= fullName %>
+      <%= name %>
     </script>
 
     <script type="text/template" id="nav-template">
       <ul class="nav">
-        <li class="bio"><a href="artists/:name/bio">Bio</a></li>
-        <li class="voice"><a href="artists/:name/voice">Voice</a></li>
-        <li class="music"><a href="artists/:name/music">Music</a></li>
-        <li class="love"><a href="artists/:name/love">Why I Love Her</a></li>
+        <li class="bio"><a href="artists/<%= path %>/bio">Bio</a></li>
+        <li class="voice"><a href="artists/<%= path %>/voice">Voice</a></li>
+        <li class="music"><a href="artists/<%= path %>/music">Music</a></li>
+        <li class="love"><a href="artists/<%= path %>/love">Why I Love Her</a></li>
       </ul>
     </script>
 

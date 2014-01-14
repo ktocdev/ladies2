@@ -39,7 +39,11 @@ var AppRouter = Backbone.Router.extend({
 
     this.showView('#artist-detail-container', new ArtistDetailView({
       model: artistDetail
-    }));  
+    })); 
+
+    this.showView('#nav', new NavView({
+      model: artistDetail
+    }));   
 
   },
 
@@ -48,7 +52,7 @@ var AppRouter = Backbone.Router.extend({
     // we should only call close when we hit the 'close' button of the artist detail view
     // we will never really be able to switch between artists like we are now
     // keeping this around for when we need it
-    
+
     if (this.currentView){
       //this.currentView.close();
     } 
