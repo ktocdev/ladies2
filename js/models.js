@@ -44,9 +44,9 @@ var Artists = Backbone.Collection.extend({
 var artists = new Artists(artistsObject, {parse: true});
 
 // Pass it to the ArtistsListView
-var artistsListView = new ArtistsListView({
-  collection: artists
-});
+//var artistsListView = new ArtistsListView({
+//  collection: artists
+//});
 
 // Render the view
-artistsListView.render();
+//artistsListView.render();

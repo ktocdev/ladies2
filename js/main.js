@@ -1,5 +1,4 @@
 Backbone.View.prototype.close = function() {
-  console.log( 'Closing view ' + this );
   if ( this.beforeClose ) {
     this.beforeClose();
   }
@@ -9,17 +8,14 @@ Backbone.View.prototype.close = function() {
 
 var AppRouter = Backbone.Router.extend({
   routes: {
-    ""                          : "list",
     "artists/:path"             : "artistDetailView",
     "artists/:path/:section"    : "artistDetailSectionView"
   },
 
   initialize: function () {
-
-  },
-
-  list: function() {
-
+    this.showView('#container', new ArtistsListView({
+      collection: artists
+    })); 
   },
 
   artistDetailView: function (path) {

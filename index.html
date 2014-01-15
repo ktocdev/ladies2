@@ -3,6 +3,7 @@
   <head>
 		<title>Inspiring Voice - Girl Singers You Should Love</title>
     <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
 
@@ -22,9 +23,12 @@
     </script>
 
     <script type="text/template" id="artist-detail-template">
-      <div id="nav"></div>
-      <%= name %>
-      <div id="artist-detail-section"></div>
+      <div class="artist-details">
+        <div class="close-btn"><a href="#">X</a></div>
+        <div id="nav"></div>
+        <%= name %>
+        <div id="artist-detail-section"></div>
+      </div>
     </script>
 
     <script type="text/template" id="nav-template">
