@@ -1,5 +1,4 @@
 var ArtistVoiceView = Backbone.View.extend({
-  //el: "#artist-detail-section",
   template: _.template($("#artist-voice-template").html()),
 
   initialize: function () {

@@ -8,8 +8,8 @@ Backbone.View.prototype.close = function() {
 
 var AppRouter = Backbone.Router.extend({
   routes: {
-    "artists/:path"             : "artistDetailView",
-    "artists/:path/:section"    : "artistDetailSectionView"
+    "artists/:path(/)"             : "artistDetailView",
+    "artists/:path/:section(/)"    : "artistDetailSectionView"   
   },
 
   initialize: function () {
@@ -19,7 +19,6 @@ var AppRouter = Backbone.Router.extend({
   },
 
   artistDetailView: function (path) {
-
     var artistDetail = artists.get(path);
 
     this.showView('#artist-detail-container', new ArtistDetailView({
@@ -37,9 +36,9 @@ var AppRouter = Backbone.Router.extend({
   },
 
   artistDetailSectionView: function (path, section) {
+    this.artistDetailView(path);
     var artistDetail = artists.get(path),
         artistViewSection = section;
-
     switch (artistViewSection) {
       case 'bio':
         this.showView('#artist-detail-section', new ArtistBioView({
@@ -73,7 +72,7 @@ var AppRouter = Backbone.Router.extend({
 
     // we should only call close when we hit the 'close' button of the artist detail view "overlay"
     // we will never really be able to switch between artists like we are now
-    // keeping this around for when we need it
+    // keeping around for if/when we need it
 
     if (this.currentView){
       //this.currentView.close();
