@@ -1,12 +1,13 @@
 var ArtistVoiceView = Backbone.View.extend({
-  template: _.template($("#artist-voice-template").html()),
+  template: "ArtistVoiceView",
 
   initialize: function () {
     this.render();
   },
 
   render: function () {
-    this.$el.html(this.template(this.model.toJSON()));
+    var rendered_html = render(this.template, {});
+    this.$el.append(rendered_html(_.extend(this.model.toJSON())));
   	return this.el;
   }
 

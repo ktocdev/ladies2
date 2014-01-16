@@ -1,15 +1,16 @@
 var NavView = Backbone.View.extend({
   el: "#nav",
   className: "nav-container",
-  template: _.template($("#nav-template").html()),
+  template: "NavView",
 
   initialize: function () {
     this.render();
   },
 
   render: function () {
-    this.$el.html(this.template(this.model.toJSON()));
-    //return this;
+    //var rendered_html = render(this.template, {});
+    //this.$el.append(rendered_html(_.extend(this.model.toJSON())));
+    //return this.el;
   }
 
   /*selectMenuItem: function (menuItem) {

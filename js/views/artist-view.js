@@ -1,8 +1,13 @@
 var ArtistView = Backbone.View.extend({
   className: "artist",
-  template: _.template($("#artist-template").html()),
+  template: "ArtistView",
+
   render: function () {
-    this.$el.append(this.template(_.extend(this.model.toJSON())));
+	
+  	var rendered_html = render(this.template, {});
+  	console.log(rendered_html)
+    this.$el.append(rendered_html(_.extend(this.model.toJSON())));
   	return this.el;
   }
+
 });

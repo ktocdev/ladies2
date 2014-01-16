@@ -1,9 +1,10 @@
 var AlbumView = Backbone.View.extend({
   tagName: "li",
   className: "album",
-  template: _.template($("#album-template").html()),
+  template: "AlbumView",
   render: function () {
-    this.$el.empty();
-    this.$el.append(this.template(this.model.toJSON()));
+    //var rendered_html = render(this.template, {});
+    //this.$el.append(rendered_html(_.extend(this.model.toJSON())));
+    //return this.el;
   }
 });

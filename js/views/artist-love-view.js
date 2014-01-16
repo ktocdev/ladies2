@@ -1,14 +1,14 @@
 var ArtistLoveView = Backbone.View.extend({
-  template: _.template($("#artist-love-template").html()),
+  template: "ArtistLoveView",
 
   initialize: function () {
     this.render();
   },
 
   render: function () {
-    this.$el.html(this.template(this.model.toJSON()));
-    console.log(this.el)
-  	return this.el;
+    //var rendered_html = render(this.template, {});
+    //this.$el.append(rendered_html(_.extend(this.model.toJSON())));
+  	//return this.el;
   }
 
 });

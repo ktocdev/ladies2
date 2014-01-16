@@ -1,15 +1,16 @@
 var ArtistDetailView = Backbone.View.extend({
 	//el: "#artist-detail-container",
   className: "artist-detail",
-  template: _.template($("#artist-detail-template").html()),
+  template: "ArtistDetailView",
 
   initialize: function () {
 
   },
 
   render: function () {
-    this.$el.html(this.template(this.model.toJSON()));
-  	return this.el;
+    //var rendered_html = render(this.template, {});
+    //this.$el.append(rendered_html(_.extend(this.model.toJSON())));
+    //return this.el;
   },
 
   events: {

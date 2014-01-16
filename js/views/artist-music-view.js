@@ -1,5 +1,5 @@
 var ArtistMusicView = Backbone.View.extend({
-  template: _.template($("#artist-music-template").html()),
+  template: "ArtistMusicView",
 
   initialize: function () {
     this.render();
@@ -17,10 +17,15 @@ var ArtistMusicView = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.template(this.model.toJSON()));  
+    var rendered_html = render(this.template, {});
+    //this.$el.append(rendered_html(_.extend(this.model.toJSON())));
+    //this.renderAlbums();
+    //return this.el;
+
+    //this.$el.html(this.template(this.model.toJSON()));  
     // Render the albums for Artist
-    this.renderAlbums();
-    return this.el;     
+    //this.renderAlbums();
+    //return this.el;     
   }
 
 });
