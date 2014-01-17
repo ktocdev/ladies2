@@ -1,4 +1,4 @@
-function render(tmpl_name, tmpl_data) {
+/*function render(tmpl_name, tmpl_data) {
     if ( !render.tmpl_cache ) { 
         render.tmpl_cache = {};
     }
@@ -23,4 +23,21 @@ function render(tmpl_name, tmpl_data) {
     }
 
     return render.tmpl_cache[tmpl_name](tmpl_data);
+}*/
+
+
+function renderTemplate(url) {
+    var tmpl_dir = 'tpl';
+    var url = tmpl_dir + '/' + url + '.html';
+
+    var data = "<h1> failed to load url : " + url + "</h1>";
+    $.ajax({
+        async: false,
+        dataType: "text",
+        url: url,
+        success: function(response) {
+          data = response;
+        }
+    });
+    return data;
 }

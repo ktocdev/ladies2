@@ -6,6 +6,7 @@ var AlbumsListView = Backbone.View.extend({
     });
     // Append it to the albums ul that is part
     // of the view
+    console.log(albumView.el);
     this.$el.append(albumView.el);
     albumView.render();
   },

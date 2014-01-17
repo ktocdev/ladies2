@@ -2,13 +2,14 @@ var ArtistBioView = Backbone.View.extend({
   template: "ArtistBioView",
 
   initialize: function () {
-    this.render();
+
   },
 
   render: function () {
-    //var rendered_html = render(this.template, {});
-    //this.$el.append(rendered_html(_.extend(this.model.toJSON())));
-    //return this.el;
+    var data = renderTemplate(this.template);
+  	data = _.template(data);
+    this.$el.append(data(_.extend(this.model.toJSON())));
+  	return this.el;
   }
 
 });

@@ -10,52 +10,6 @@
     <div id="container"></div>
     <div id="artist-detail-container"></div>
 
-    <script type="text/template" id="artist-template">
-      <div>
-        <a href="#artists/<%= path %>"><%= name %></a>
-      <div>
-    </script>
-
-    <script type="text/template" id="album-template">
-      <div>
-        <%= albumName %>
-      </div>
-    </script>
-
-    <script type="text/template" id="artist-detail-template">
-      <div class="artist-details">
-        <div class="close-btn"><a href="#">X</a></div>
-        <div id="nav"></div>
-        <%= name %>
-        <div id="artist-detail-section"></div>
-      </div>
-    </script>
-
-    <script type="text/template" id="nav-template">
-      <ul class="nav">
-        <li class="bio"><a href="#artists/<%= path %>/bio">Bio</a></li>
-        <li class="voice"><a href="#artists/<%= path %>/voice">Voice</a></li>
-        <li class="music"><a href="#artists/<%= path %>/music">Music</a></li>
-        <li class="love"><a href="#artists/<%= path %>/love">Why I Love Her</a></li>
-      </ul>
-    </script>
-
-    <script type="text/template" id="artist-bio-template">
-      <%= fullName %>
-    </script>
-
-    <script type="text/template" id="artist-voice-template">
-      <%= vocalType %>
-    </script>
-
-    <script type="text/template" id="artist-music-template">
-      <ul class="albums"></ul>
-    </script>
-
-    <script type="text/template" id="artist-love-template">
-      <%= love1 %>
-    </script>
-
   	<script src="lib/jquery.js"> </script>
     <script src="lib/underscore.js"></script>
     <script src="lib/backbone.js"></script>
