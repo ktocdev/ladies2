@@ -7,11 +7,16 @@ var AlbumView = Backbone.View.extend({
 
   },
 
-  render: function () {
-    var data = renderTemplate(this.template);
-  	data = _.template(data);
-    this.$el.append(data(_.extend(this.model.toJSON())));
-  	return this.el;
+  render: function () {    
+    var that = this;
+    TemplateManager.get(this.template, function(template){
+      var html = _.template(template);
+      that.renderView(html)
+    });
+  },
+
+  renderView: function(html){
+    this.$el.html(html(_.extend(this.model.toJSON())));
   }
 
 });

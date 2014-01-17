@@ -1,7 +1,9 @@
 Backbone.View.prototype.close = function() {
+
   if ( this.beforeClose ) {
     this.beforeClose();
   }
+
   this.remove(); 
   this.off();
 }
@@ -44,49 +46,35 @@ var AppRouter = Backbone.Router.extend({
         this.showView('#artist-detail-section', new ArtistBioView({
           model: artistDetail
         })); 
-        break;
+      break;
       case 'voice':
         this.showView('#artist-detail-section', new ArtistVoiceView({
           model: artistDetail
         })); 
-        break;
+      break;
       case 'music':
         this.showView('#artist-detail-section', new ArtistMusicView({
           model: artistDetail
         }));
-        break;
+      break;
       case 'love':
         this.showView('#artist-detail-section', new ArtistLoveView({
           model: artistDetail
         }));
-        break;
+      break;
       default:
         this.showView('#artist-detail-section', new ArtistBioView({
           model: artistDetail
         })); 
-        break;
+      break;
     }
   },
 
   showView: function (selector, view) {
-
-    // we should only call close when we hit the 'close' button of the artist detail view "overlay"
-    // we will never really be able to switch between artists like we are now
-    // keeping around for if/when we need it
-
-    if (this.currentView){
-      //this.currentView.close();
-    } 
-
-    $(selector).html(view.render());
-    this.currentView = view;
-   
-    return view;
+    view.render(selector);
   }
 
 });
 
-//utils.loadTemplate(['HeaderView', 'WineView', 'WineListItemView', 'AboutView'], function() {
-  app = new AppRouter();
-  Backbone.history.start();
-// });
+app = new AppRouter();
+Backbone.history.start();

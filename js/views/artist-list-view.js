@@ -1,5 +1,10 @@
 var ArtistsListView = Backbone.View.extend({
   el: "#container",
+
+  initialize: function () {
+
+  },
+
   renderArtistView: function(artist) {
     // Create a new artistView
     var artistView = new ArtistView({
@@ -10,6 +15,7 @@ var ArtistsListView = Backbone.View.extend({
     
     artistView.render();
   },
+
   render: function () {
     var thisView = this;
     // Iterate over each artist Model
@@ -18,4 +24,5 @@ var ArtistsListView = Backbone.View.extend({
       thisView.renderArtistView(artist);
     });
   }
+  
 });
