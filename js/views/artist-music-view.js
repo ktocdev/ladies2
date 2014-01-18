@@ -25,7 +25,7 @@ var ArtistMusicView = Backbone.View.extend({
   },
 
   renderView: function(html,selector){
-    $(selector).html(html(_.extend(this.model.toJSON())));
+    $(selector).append(html(_.extend(this.model.toJSON())));
     this.renderAlbums();
   }
 

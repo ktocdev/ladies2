@@ -16,7 +16,7 @@ var AlbumView = Backbone.View.extend({
   },
 
   renderView: function(html){
-    this.$el.html(html(_.extend(this.model.toJSON())));
+    this.$el.append(html(_.extend(this.model.toJSON())));
   }
 
 });
