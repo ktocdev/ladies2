@@ -14,7 +14,7 @@ var ArtistLoveView = Backbone.View.extend({
   },
 
   renderView: function(html,selector){
-    $(selector).append(html(_.extend(this.model.toJSON())));
+    $(selector).html(html(_.extend(this.model.toJSON())));
   }
 
 });

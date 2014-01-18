@@ -16,9 +16,11 @@ var ArtistDetailView = Backbone.View.extend({
   },
 
   renderView: function(html,$el){
+    var view = this;
     $el.empty();
-    $el.append(html(_.extend(this.model.toJSON())));
-
+    $.when($el.append(html(_.extend(this.model.toJSON())))).then(function() {
+      view.setElement($(".artist-details"));
+    });
   },
 
   events: {
@@ -26,11 +28,9 @@ var ArtistDetailView = Backbone.View.extend({
   },
 
   close:function(){
-    console.log('closing');
     if ( this.beforeClose ) {
       this.beforeClose();
     }
-
     this.remove(); 
     this.off();
   }

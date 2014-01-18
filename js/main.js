@@ -1,16 +1,7 @@
-Backbone.View.prototype.close = function() {
-  alert('test')
-  if ( this.beforeClose ) {
-    this.beforeClose();
-  }
-
-  this.remove(); 
-  this.off();
-}
-
 var AppRouter = Backbone.Router.extend({
   routes: {
-    ""                             : "home",
+    ""                             : "artistLink",
+    "artists(/)"                   : "artistLink",
     "artists/:path(/)"             : "artistDetailView",
     "artists/:path/:section(/)"    : "artistDetailSectionView"   
   },
@@ -21,24 +12,18 @@ var AppRouter = Backbone.Router.extend({
     })); 
   },
 
-  home: function() {
-    $("#artist-detail-container").empty();
-  },
-
   artistDetailView: function (path) {
     var artistDetail = artists.get(path);
-
+    
     this.showView('#artist-detail-container', new ArtistDetailView({
       model: artistDetail
     })); 
-
     this.showView('#nav', new NavView({
       model: artistDetail
     }));  
-
     this.showView('#artist-detail-section', new ArtistBioView({
       model: artistDetail
-    }));  
+    }));
 
   },
 
@@ -73,6 +58,10 @@ var AppRouter = Backbone.Router.extend({
         })); 
       break;
     }
+  },
+
+  artistLink: function(){
+    $("#artist-detail-container").empty();
   },
 
   showView: function (selector, view) {
