@@ -1,4 +1,6 @@
 .artist-details{
 	border: 1px solid #666;
 	width: 400px;
+	float: left;
+	clear: both;
 }

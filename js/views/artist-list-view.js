@@ -1,5 +1,5 @@
 var ArtistsListView = Backbone.View.extend({
-  el: "#container",
+  el: "#artist-list-container",
 
   initialize: function () {
 
@@ -12,7 +12,6 @@ var ArtistsListView = Backbone.View.extend({
     });
     // Append it to the container
     this.$el.append(artistView.el);
-    
     artistView.render();
   },
 
@@ -23,6 +22,7 @@ var ArtistsListView = Backbone.View.extend({
       // Call the renderArtistView method
       thisView.renderArtistView(artist);
     });
+
   }
   
 });

@@ -16,6 +16,7 @@ var Artist = Backbone.Model.extend({
   idAttribute: 'path',
   defaults: {
     name: "",
+    className: "",
     fullName: "",
     vocalType: "unknown",
     love1: ""
