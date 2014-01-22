@@ -12,7 +12,6 @@ var ArtistView = Backbone.View.extend({
       var html = _.template(template);
       that.renderView(html)
     });
-
   },
 
   renderView: function(html){

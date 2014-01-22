@@ -41,5 +41,19 @@ var Artists = Backbone.Collection.extend({
   model: Artist
 });
 
-// Create a artists collection 
+// Create an artists object 
 var artists = new Artists(artistsObject, {parse: true});
+
+// About Model
+var About = Backbone.Model.extend({
+  idAttribute: 'id',
+  defaults: {
+    title: "",
+    path: "",
+    copy: "",
+    email: ""
+  }
+});
+
+// Create an about object 
+var about = new About(aboutObject, {parse: true});

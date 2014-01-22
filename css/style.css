@@ -1,24 +1,67 @@
-#artist-list-container{
-	width: 92%;
-	padding: 0 4%;
-	-box-sizing: border-box;
+*{
 	-webkit-box-sizing: border-box;
-	margin: 20px auto;
-	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-
+/*--- Begin Containers ---*/
+#artist-list-container{
+	width: 97%;
+	padding: 0 1%;
+	position: absolute;
+}
+#artist-detail-container{
+	width: 97%;
+	padding: 0 1%;
+	position: absolute;
+}
+#about-container{
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	border: 1px solid #666;
+	top: 900px;
+}
 .artist-details{
 	border: 1px solid #666;
-	width: 400px;
-	float: left;
-	clear: both;
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	height: 880px;
 }
-
-.col-container > div{
+/*--- End Containers ---*/
+/*--- Begin Grid ---*/
+.col-container > [class*="col"]{
 	height: 200px;
 	float: left;
-	border: 1px solid gray;
-	margin: 0 20px 20px 0;
-	-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+	border: 1px solid #999;
+	margin: 0 3.5% 20px 0;
 }
+.col-container > [class*="col"].last{
+	margin-right: 0;
+}
+.col-container > [class*="col"] img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.col1 {width: 5.5%;}
+.col2 {width: 14%;}
+.col3 {width: 22.5%;}
+.col4 {width: 31%;}
+.col5 {width: 39.5%;}
+.col6 {width: 48%;}
+.col7 {width: 56.5%;}
+.col8 {width: 65%;}
+.col9 {width: 73.5%;}
+.col10 {width: 82%;}
+.col11 {width: 90.5%;}
+.col12 {width: 99%; margin: 0;}
+@media all and (max-width: 600px){
+	#artist-detail-container{
+		width: 97%;
+	}
+	.col-container > [class*="col"]{
+		float: none;
+		width: 97%;
+		margin-right: 0 !important;
+	}
+}
+/*--- End Grid ---*/

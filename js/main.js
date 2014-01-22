@@ -7,14 +7,16 @@ var AppRouter = Backbone.Router.extend({
   },
 
   initialize: function () {
-    this.showView('#container', new ArtistsListView({
+    this.showView('#artist-list-container', new ArtistsListView({
       collection: artists
+    })); 
+    this.showView('#about-container', new AboutView({
+      model: about
     })); 
   },
 
   artistDetailView: function (path) {
     var artistDetail = artists.get(path);
-    
     this.showView('#artist-detail-container', new ArtistDetailView({
       model: artistDetail
     })); 
@@ -24,7 +26,6 @@ var AppRouter = Backbone.Router.extend({
     this.showView('#artist-detail-section', new ArtistBioView({
       model: artistDetail
     }));
-
   },
 
   artistDetailSectionView: function (path, section) {
@@ -35,7 +36,7 @@ var AppRouter = Backbone.Router.extend({
       case 'bio':
         this.showView('#artist-detail-section', new ArtistBioView({
           model: artistDetail
-        })); 
+        }));
       break;
       case 'voice':
         this.showView('#artist-detail-section', new ArtistVoiceView({
