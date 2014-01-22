@@ -16,7 +16,7 @@ var artistsObject = [{
   }]
 }, {
   "name": "Lorde",
-  "className": "col4",
+  "className": "col5",
   "path": "lorde",
   "fullName": "Ella Maria Lani Yelich-O'Connor",
   "vocalType": "Contralto",
@@ -26,7 +26,7 @@ var artistsObject = [{
   }]
 }, {
   "name": "Adele",
-  "className": "col4 last",
+  "className": "col3 last",
   "path": "adele",
   "fullName": "Adele Laurie Blue Adkins",
   "vocalType": "Contralto",
@@ -58,7 +58,7 @@ var artistsObject = [{
   "vocalType": "Spinto-Mezzo-Soprano",
   "love1": "Her voice is golden perfection to the thousandth degree.",
   "albums": [{
-    "albumName": "The ArchAndroid", 
+    "albumName": "The ArchAndroid",
     }, {
     "albumName": "The Electric Lady"
   }]
@@ -70,7 +70,7 @@ var artistsObject = [{
   "vocalType": "Light Lyric Soprano",
   "love1": "She sounds like a magical faery.",
   "albums": [{
-    "albumName": "Halcyon", 
+    "albumName": "Halcyon",
     }, {
     "albumName": "Lights",
     }, {
@@ -84,12 +84,12 @@ var artistsObject = [{
   "vocalType": "Contralto",
   "love1": "She is angry and dark.",
   "albums": [{
-    "albumName": "Tidal", 
+    "albumName": "Tidal",
     }, {
     "albumName": "When the Pawn",
     }, {
     "albumName": "Extraordinary Machines",
-    }, {  
+    }, {
     "albumName": "The Idler Wheel...",
   }],
 },{
@@ -100,7 +100,7 @@ var artistsObject = [{
   "vocalType": "Contralto",
   "love1": "She was a deep, complex human being.",
   "albums": [{
-    "albumName": "Frank", 
+    "albumName": "Frank",
     }, {
     "albumName": "Back to Black",
     }, {
@@ -114,7 +114,7 @@ var artistsObject = [{
   "vocalType": "Light Lyric Soprano",
   "love1": "She sounds like a magical faery.",
   "albums": [{
-    "albumName": "Halcyon", 
+    "albumName": "Halcyon",
     }, {
     "albumName": "Lights",
     }, {
@@ -128,7 +128,7 @@ var artistsObject = [{
   "vocalType": "Lyric Contralto",
   "love1": "Her style is extremely diverse.",
   "albums": [{
-    "albumName": "Love Me Back", 
+    "albumName": "Love Me Back",
     }, {
     "albumName": "Fearless",
   }],
@@ -140,19 +140,19 @@ var artistsObject = [{
   "vocalType": "Mezzo-Soprano",
   "love1": "She is a genius musician.",
   "albums": [{
-    "albumName": "Little Earthquakes", 
+    "albumName": "Little Earthquakes",
     },{
-    "albumName": "Under the Pink", 
+    "albumName": "Under the Pink",
     },{
-    "albumName": "Boys for Pele", 
+    "albumName": "Boys for Pele",
     },{
-    "albumName": "From the Choirgirl Hotel", 
+    "albumName": "From the Choirgirl Hotel",
     },{
-    "albumName": "To Venus and Back", 
+    "albumName": "To Venus and Back",
     },{
-    "albumName": "Scarlet's Walk", 
+    "albumName": "Scarlet's Walk",
     },{
-    "albumName": "Midwinter Graces", 
+    "albumName": "Midwinter Graces",
     }, {
     "albumName": "Night of Hunters",
   }],
@@ -164,13 +164,13 @@ var artistsObject = [{
   "vocalType": "Mezzo-Soprano",
   "love1": "I love her grooves.",
   "albums": [{
-    "albumName": "Baduizm", 
+    "albumName": "Baduizm",
     },{
-    "albumName": "Mama's Gun", 
+    "albumName": "Mama's Gun",
     },{
-    "albumName": "New Ameyrkah Part One (4th World War)", 
+    "albumName": "New Ameyrkah Part One (4th World War)",
     },{
-    "albumName": "New Ameyrkah Part Two (Return of the Ankh)", 
+    "albumName": "New Ameyrkah Part Two (Return of the Ankh)",
   }],
 },{
   "name": "Kate Bush",
@@ -180,19 +180,19 @@ var artistsObject = [{
   "vocalType": "Dramatic Soprano",
   "love1": "She is super quirky.",
   "albums": [{
-    "albumName": "A Kick Inside", 
+    "albumName": "A Kick Inside",
     },{
-    "albumName": "Never for Ever", 
+    "albumName": "Never for Ever",
     },{
-    "albumName": "The Dreaming", 
+    "albumName": "The Dreaming",
     },{
-    "albumName": "The Sensual World", 
+    "albumName": "The Sensual World",
     },{
-    "albumName": "The Red Shoes", 
+    "albumName": "The Red Shoes",
     },{
-    "albumName": "Scarlet's Walk", 
+    "albumName": "Scarlet's Walk",
     },{
-    "albumName": "50 Words for Snow", 
+    "albumName": "50 Words for Snow",
   }],
 }
 ];

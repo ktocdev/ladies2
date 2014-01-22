@@ -14,16 +14,16 @@ body{
 }
 /*--- Begin Containers ---*/
 #artist-list-container{
-	width: 99%;
+	width: 100%;
 	padding: 0 2.5%;
 }
 #artist-detail-container{
-	width: 99%;
+	width: 100%;
 	padding: 0 2.5%;
 	position: absolute;
 }
 #about-container{
-	width: 99%;
+	width: 100%;
 	padding: 0 2.5%;
 	clear: both;
 }
@@ -37,9 +37,8 @@ body{
 /*--- End Containers ---*/
 /*--- Begin Grid ---*/
 .col-container > [class*="col"]{
-	height: 200px;
+	height: 276px;
 	float: left;
-	border: 1px solid #999;
 	margin: 0 3.5% 40px 0;
 }
 .col-container > [class*="col"].last{
@@ -76,4 +75,7 @@ body{
 /*--- Header Begin ---*/
 h1{
 	font-family: fjalla;
+}
+h1 span{
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 }
