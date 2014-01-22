@@ -16,11 +16,11 @@ var ArtistsListView = Backbone.View.extend({
   },
 
   render: function () {
-    var thisView = this;
+    var that = this;
     // Iterate over each artist Model
     _.each(this.collection.models, function (artist) {
       // Call the renderArtistView method
-      thisView.renderArtistView(artist);
+      that.renderArtistView(artist);
     });
 
   }

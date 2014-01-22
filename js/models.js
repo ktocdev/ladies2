@@ -1,6 +1,6 @@
 // Album Model
 var Album = Backbone.Model.extend({
-  idAttribute: '_id',
+  idAttribute: 'id',
   defaults: {
     albumName: ""
   }
@@ -18,7 +18,7 @@ var Artist = Backbone.Model.extend({
     name: "",
     className: "",
     fullName: "",
-    vocalType: "unknown",
+    vocalType: "",
     love1: ""
   },
   parse: function (resp) {

@@ -20,8 +20,6 @@ var ArtistView = Backbone.View.extend({
     $.when(this.$el.append(html(_.extend(this.model.toJSON())))).then(function() {
       view.setElement($(".col"));
     });
-
-    return this;
   }
 
 });
