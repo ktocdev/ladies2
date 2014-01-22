@@ -1,5 +1,4 @@
 var NavView = Backbone.View.extend({
-  el: "#nav",
   className: "nav-container",
   template: "NavView",
 
@@ -7,7 +6,7 @@ var NavView = Backbone.View.extend({
 
   },
 
-  render: function (selector) {    
+  render: function (selector) {
     var that = this;
     TemplateManager.get(this.template, function(template){
       var html = _.template(template);

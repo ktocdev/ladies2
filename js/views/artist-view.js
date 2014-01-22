@@ -1,6 +1,7 @@
 var ArtistView = Backbone.View.extend({
   className: "col-container",
   template: "ArtistView",
+  tagName: "li",
 
   initialize: function () {
 
@@ -16,9 +17,7 @@ var ArtistView = Backbone.View.extend({
 
   renderView: function(html){
     var view = this;
-    $.when(this.$el.append(html(_.extend(this.model.toJSON())))).then(function() {
-      view.setElement($(".col"));
-    });
+    this.$el.append(html(_.extend(this.model.toJSON())));
   }
 
 });

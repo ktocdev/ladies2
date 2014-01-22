@@ -7,7 +7,7 @@ var AlbumView = Backbone.View.extend({
 
   },
 
-  render: function () {    
+  render: function () {
     var that = this;
     TemplateManager.get(this.template, function(template){
       var html = _.template(template);
