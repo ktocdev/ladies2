@@ -14,8 +14,7 @@ body{
 }
 /*--- Begin Containers ---*/
 #artist-list-container{
-	max-width: 1420px;
-	padding: 0 2.5%;
+
 }
 #artist-detail-container{
 	width: 100%;
@@ -37,7 +36,6 @@ body{
 /*--- End Containers ---*/
 /*--- Begin Grid ---*/
 .col-container > [class*="col"]{
-	/*height: 276px;*/
 	float: left;
 	margin: 0 0 20px 0;
 }
