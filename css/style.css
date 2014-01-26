@@ -9,43 +9,54 @@ ul,li{
 	list-style-type: none;
 }
 body{
-	margin: 20px 0 40px;
+	margin: 90px 0 40px;
 	font-family: 'open_sans';
+}
+header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
 }
 /*--- Begin Containers ---*/
 #artist-list-container{
-
+	margin: auto;
+	width: 95%;
+	padding: 0 2.5%;
 }
 #artist-detail-container{
 	width: 100%;
-	padding: 0 2.5%;
-	position: absolute;
+	padding: 84px 5%;
+	position: fixed;
+	top: 0;
+}
+.artist-details{
+	background-color: rgba(255,255,255,0.9);
+	border: 1px solid #777;
 }
 #about-container{
-	width: 100%;
+	margin: auto;
+	width: 95%;
 	padding: 0 2.5%;
 	clear: both;
 }
 .about{
-	border: 1px solid #666;
-}
-.artist-details{
-	background-color: rgba(255,255,255,0.9);
-	border: 1px solid #666;
+	border: 1px solid #777;
 }
 /*--- End Containers ---*/
 /*--- Begin Grid ---*/
-.col-container > [class*="col"]{
+* > [class*="col"]{
 	float: left;
-	margin: 0 0 20px 0;
+	margin-right: 3.5%;
+	margin-bottom: 40px;
 }
-.col-container > [class*="col"].last{
+* > [class*="col"].last{
 	margin-right: 0;
 }
-.col-container > [class*="col"] img{
+* > [class*="col"] img{
 	width: 100%;
-	height: auto;
 	display: block;
+	height: auto;
 }
 .col1 {width: 5.5%;}
 .col2 {width: 14%;}
@@ -60,13 +71,13 @@ body{
 .col11 {width: 90.5%;}
 .col12 {width: 99%; margin: 0;}
 @media all and (max-width: 600px){
-	#artist-detail-container{
-		width: 97%;
-	}
-	.col-container > [class*="col"]{
+	* > [class*="col"]{
 		float: none;
 		width: 97%;
-		margin-right: 0 !important;
+		margin-right: 0;
+	}
+	#artist-detail-container{
+		width: 100%;
 	}
 }
 /*--- End Grid ---*/

@@ -1,7 +1,11 @@
 var ArtistView = Backbone.View.extend({
-  className: "col-container",
   template: "ArtistView",
   tagName: "li",
+  attributes : function () {
+    return {
+      class : this.model.get( 'colClass' )
+    };
+  },
 
   initialize: function () {
 
@@ -11,13 +15,14 @@ var ArtistView = Backbone.View.extend({
   	var that = this;
     TemplateManager.get(this.template, function(template){
       var html = _.template(template);
-      that.renderView(html)
+      that.renderView(html);
     });
   },
 
   renderView: function(html){
     var view = this;
     this.$el.append(html(_.extend(this.model.toJSON())));
+    this.el.attributes.class;
   }
 
 });

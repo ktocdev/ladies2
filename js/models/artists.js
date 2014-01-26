@@ -1,6 +1,6 @@
 var artistsObject = [{
   "name": "Lady Gaga",
-  "className": "col4",
+  "colClass": "col4",
   "path": "ladygaga",
   "fullName": "Stefani Joanne Angelina Germanotta ",
   "vocalType": "Mezzo-Soprano",
@@ -16,7 +16,7 @@ var artistsObject = [{
   }]
 }, {
   "name": "Lorde",
-  "className": "col5",
+  "colClass": "col5",
   "path": "lorde",
   "fullName": "Ella Maria Lani Yelich-O'Connor",
   "vocalType": "Contralto",
@@ -26,7 +26,7 @@ var artistsObject = [{
   }]
 }, {
   "name": "Adele",
-  "className": "col3 last",
+  "colClass": "col3 last",
   "path": "adele",
   "fullName": "Adele Laurie Blue Adkins",
   "vocalType": "Contralto",
@@ -38,7 +38,7 @@ var artistsObject = [{
   }]
 },{
   "name": "Sia",
-  "className": "col5",
+  "colClass": "col5",
   "path": "sia",
   "fullName": "Sia Kate Isobelle Furler",
   "vocalType": "Contralto",
@@ -52,7 +52,7 @@ var artistsObject = [{
   }]
 },{
   "name": "Janelle Monáe",
-  "className": "col3",
+  "colClass": "col3",
   "path": "janelle",
   "fullName": "Janelle Monáe Robinson",
   "vocalType": "Spinto-Mezzo-Soprano",
@@ -64,7 +64,7 @@ var artistsObject = [{
   }]
 },{
   "name": "Ellie Goulding",
-  "className": "col4 last",
+  "colClass": "col4 last",
   "path": "ellie",
   "fullName": "Elena Jane 'Ellie' Goulding",
   "vocalType": "Light Lyric Soprano",
@@ -78,7 +78,7 @@ var artistsObject = [{
   }]
 },{
   "name": "Fiona Apple",
-  "className": "col4",
+  "colClass": "col4",
   "path": "fiona",
   "fullName": "Fiona Apple McAfee Maggart",
   "vocalType": "Contralto",
@@ -94,7 +94,7 @@ var artistsObject = [{
   }],
 },{
   "name": "Amy Winehouse",
-  "className": "col5",
+  "colClass": "col5",
   "path": "amy",
   "fullName": "Amy Jade Winehouse",
   "vocalType": "Contralto",
@@ -108,7 +108,7 @@ var artistsObject = [{
   }],
 },{
   "name": "Ellie Goulding",
-  "className": "col4 last",
+  "colClass": "col4 last",
   "path": "ellie",
   "fullName": "Elena Jane 'Ellie' Goulding",
   "vocalType": "Light Lyric Soprano",
@@ -122,7 +122,7 @@ var artistsObject = [{
   }],
 },{
   "name": "Jazmine Sullivan",
-  "className": "col3 last",
+  "colClass": "col3 last",
   "path": "jazmine",
   "fullName": "Jazmine Marie Sullivan",
   "vocalType": "Lyric Contralto",
@@ -134,7 +134,7 @@ var artistsObject = [{
   }],
 },{
   "name": "Tori Amos",
-  "className": "col3",
+  "colClass": "col3",
   "path": "tori",
   "fullName": "Myra Ellen Amos",
   "vocalType": "Mezzo-Soprano",
@@ -158,7 +158,7 @@ var artistsObject = [{
   }],
 },{
   "name": "Erykah Badu",
-  "className": "col4",
+  "colClass": "col4",
   "path": "erykah",
   "fullName": "Erykah Abi Wright",
   "vocalType": "Mezzo-Soprano",
@@ -174,7 +174,7 @@ var artistsObject = [{
   }],
 },{
   "name": "Kate Bush",
-  "className": "col5 last",
+  "colClass": "col5 last",
   "path": "kate",
   "fullName": "Catherine 'Kate' Bush",
   "vocalType": "Dramatic Soprano",
