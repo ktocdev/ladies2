@@ -1,12 +1,11 @@
+<h2 class="about-title">
+	<%= title %>
+</h2>
 <div class="about">
-	<div class="about-title">
-		<%= title %>
+	<div class="col9">
+		<p><%= copy %> <a href="mailto:<%= email %>">Contact me!</a></p>
 	</div>
-	<div class="about-copy">
-		<%= copy %>
-	</div>
-	<div class="about-img-container">
+	<div class="col3 last">
 		<img class="about-img" src="pics/<%= img %>" alt="">
 	</div>
-	<div class="about-email"><%= email %></div>
 </div>
