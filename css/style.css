@@ -126,13 +126,19 @@ h1 .right{
 	top: 80px;
 }
 .about-title{
-	letter-spacing: 2px;
-  background-color: #19191D;
-  /*box-shadow: -20px -20px 0 rgba(7, 7, 17, 0.9);*/
-  line-height: 44px;
-  margin: -44px 5% 0;
-  padding: 0 0 0 52px;
+	background-color: #19191D;
+  letter-spacing: 2px;
+  line-height: 50px;
+  margin: -50px 5% 0;
+  padding: 0 0 0 60px;
   width: 200px;
+}
+.about.closed{
+	height: 0px;
+	overflow: hidden;
+}
+.about.closed > *{
+	visibility: hidden;
 }
 .about{
 	float: left;
