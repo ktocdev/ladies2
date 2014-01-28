@@ -12,9 +12,10 @@ img{
 	border: none;
 }
 body{
-	background-color: #19191D;
+	background-color: rgba(36,34,45,1);
 	background-image: url(img/bg.jpg);
 	background-repeat: no-repeat;
+	background-size: 100% auto;
 	margin: 90px 0 0;
 	font-family: 'open_sans';
 }
@@ -49,6 +50,7 @@ body{
 	width: 100%;
 	display: block;
 	height: auto;
+	box-shadow: 0 0 13px 5px rgba(28, 28, 28, 0.75);
 }
 .col1 {width: 5.5%;}
 .col2 {width: 14%;}
@@ -94,7 +96,6 @@ h1{
 	width: 100%;
 	display: table;
 	margin: 10px 0;
-
 }
 h1 span{
 	display: table-cell;
@@ -115,6 +116,41 @@ h1 .right{
 	letter-spacing: .3px;
 	text-align: right;
 }
+@media all and (max-width: 980px){
+	h1 .left{
+		font-size: 55px;
+	}
+	h1 .right{
+		font-size: 21px;
+		line-height: 41px;
+	}
+}
+@media all and (max-width: 768px){
+	#header-container{
+		padding: 15px 0;
+	}
+	h1 span{
+		display: block;
+	}
+	h1 .left{
+		line-height: 60px;
+	}
+	h1 .right{
+		line-height: 31px;
+		text-align: left;
+	}
+}
+@media all and (max-width: 600px){
+	h1 .left{
+		font-size: 44px;
+		letter-spacing: .1px;
+	}
+	h1 .right{
+		font-size: 19px;
+		line-height: 21px;
+		letter-spacing: .1px;
+	}
+}
 /*--- End Header ---*/
 /*--- Begin About ---*/
 #about-container{
@@ -132,13 +168,6 @@ h1 .right{
   margin: -50px 5% 0;
   padding: 0 0 0 60px;
   width: 200px;
-}
-.about.closed{
-	height: 0px;
-	overflow: hidden;
-}
-.about.closed > *{
-	visibility: hidden;
 }
 .about{
 	float: left;
@@ -162,5 +191,17 @@ h1 .right{
 	max-width: 154px;
 	float: right;
 }
+.about-title,
+.closed .about{
+	cursor: pointer;
+}
+.closed .about{
+	height: 0px;
+	overflow: hidden;
+}
+.closed .about > *{
+	visibility: hidden;
+}
+
 
 
