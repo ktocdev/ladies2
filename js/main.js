@@ -64,7 +64,7 @@ var AppRouter = Backbone.Router.extend({
 
   showView: function (selector, view ) {
     view.render(selector);
-  }
+  },
 
   showNav: function (section, selector, view ){
     view.render(selector, section);
