@@ -3,36 +3,33 @@ var AppRouter = Backbone.Router.extend({
     ""                             : "artistLink",
     "artists(/)"                   : "artistLink",
     "artists/:path(/)"             : "artistDetailView",
-    "artists/:path/:section(/)"    : "artistDetailSectionView"   
+    "artists/:path/:section(/)"    : "artistDetailView"
   },
 
   initialize: function () {
     this.showView('#artist-list-container', new ArtistsListView({
       collection: artists
-    })); 
+    }));
     this.showView('#about-container', new AboutView({
       model: about
-    })); 
-  },
-
-  artistDetailView: function (path) {
-    var artistDetail = artists.get(path);
-    this.showView('#artist-detail-container', new ArtistDetailView({
-      model: artistDetail
-    })); 
-    this.showView('#nav', new NavView({
-      model: artistDetail
-    }));  
-    this.showView('#artist-detail-section', new ArtistBioView({
-      model: artistDetail
     }));
   },
 
-  artistDetailSectionView: function (path, section) {
-    this.artistDetailView(path);
-    var artistDetail = artists.get(path),
-        artistViewSection = section;
-    switch (artistViewSection) {
+  artistDetailView: function (path, section) {
+
+    var artistDetail = artists.get(path);
+
+    this.showView('#artist-detail-container', new ArtistDetailView({
+      model: artistDetail
+    }));
+    this.showView('#artist-detail-section', new ArtistBioView({
+      model: artistDetail
+    }));
+    this.showNav(section, '#nav', new NavView({
+      model: artistDetail
+    }));
+
+    switch (section) {
       case 'bio':
         this.showView('#artist-detail-section', new ArtistBioView({
           model: artistDetail
@@ -41,7 +38,7 @@ var AppRouter = Backbone.Router.extend({
       case 'voice':
         this.showView('#artist-detail-section', new ArtistVoiceView({
           model: artistDetail
-        })); 
+        }));
       break;
       case 'music':
         this.showView('#artist-detail-section', new ArtistMusicView({
@@ -56,7 +53,7 @@ var AppRouter = Backbone.Router.extend({
       default:
         this.showView('#artist-detail-section', new ArtistBioView({
           model: artistDetail
-        })); 
+        }));
       break;
     }
   },
@@ -65,9 +62,13 @@ var AppRouter = Backbone.Router.extend({
     $("#artist-detail-container").empty();
   },
 
-  showView: function (selector, view) {
+  showView: function (selector, view ) {
     view.render(selector);
   }
+
+  showNav: function (section, selector, view ){
+    view.render(selector, section);
+  },
 
 });
 

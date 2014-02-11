@@ -202,6 +202,11 @@ h1 .right{
 .closed .about > *{
 	visibility: hidden;
 }
+/*--- End About ---*/
+/*--- Begin Artist View Nav ---*/
+.nav .active a{
+	font-weight: bold;
+}
 
 
 

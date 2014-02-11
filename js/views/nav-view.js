@@ -6,24 +6,26 @@ var NavView = Backbone.View.extend({
 
   },
 
-  render: function (selector) {
+  render: function (selector, section) {
     var that = this;
     TemplateManager.get(this.template, function(template){
       var html = _.template(template);
-      that.renderView(html,selector)
+      that.renderView(html, selector, section)
     });
   },
 
-  renderView: function(html,selector){
+  renderView: function(html, selector, section){
     $(selector).append(html(_.extend(this.model.toJSON())));
+    this.selectNav(section);
     return this;
-  }
+  },
 
-  /*selectMenuItem: function (menuItem) {
-    $('.nav li').removeClass('active');
-    if (menuItem) {
-      $('.' + menuItem).addClass('active');
+  selectNav: function (section) {
+    if (!section){
+      section = 'bio';
     }
-  }*/
+    $('.nav li').removeClass('active');
+    $('.nav li.' + section).addClass('active');
+  }
 
 });
