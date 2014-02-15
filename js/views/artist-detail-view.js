@@ -1,8 +1,7 @@
 var ArtistDetailView = Backbone.View.extend({
-  className: "artist-detail",
   template: "ArtistDetailView",
 
-  render: function (selector) {    
+  render: function (selector) {
     var that = this;
     that.el = $(selector);
 
@@ -12,7 +11,7 @@ var ArtistDetailView = Backbone.View.extend({
       var html = _.template(template);
       that.renderView(html,$el)
     });
-    
+
   },
 
   renderView: function(html,$el){
@@ -21,18 +20,25 @@ var ArtistDetailView = Backbone.View.extend({
     $.when($el.append(html(_.extend(this.model.toJSON())))).then(function() {
       view.setElement($(".artist-details"));
     });
+    this.setOverflow();
   },
 
   events: {
     "click .close-btn"   : "close"
   },
 
-  close:function(){
+  close: function(){
+    $('#artist-detail-container').height(0);
     if ( this.beforeClose ) {
       this.beforeClose();
     }
-    this.remove(); 
+    this.remove();
     this.off();
+  },
+
+  setOverflow: function(){
+    var h = $(window).height();
+    $('#artist-detail-container').height(h);
   }
 
 });
