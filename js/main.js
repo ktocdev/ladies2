@@ -1,4 +1,4 @@
-var AppRouter = Backbone.Router.extend({
+var Ladies = Backbone.Router.extend({
   routes: {
     ""                             : "artistLink",
     "artists(/)"                   : "artistLink",
@@ -72,5 +72,5 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-app = new AppRouter();
+app = new Ladies();
 Backbone.history.start();

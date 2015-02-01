@@ -24,8 +24,8 @@ var NavView = Backbone.View.extend({
     if (!section){
       section = 'bio';
     }
-    $('.artist-detail-nav li').removeClass('active');
-    $('.artist-detail-nav li.' + section).addClass('active');
+    $('.artist-detail-nav a').removeClass('active');
+    $('.artist-detail-nav .' + section + ' a').addClass('active');
   }
 
 });

@@ -1,32 +1,56 @@
 @font-face {
   font-family: 'open_sans_semibold';
-  src: url('fonts/opensans-semibold-webfont.eot');
-  src: url('fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/opensans-semibold-webfont.woff') format('woff'),
-       url('fonts/opensans-semibold-webfont.ttf') format('truetype'),
-       url('fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+  src: url('fonts/opensans/opensans-semibold-webfont.eot');
+  src: url('fonts/opensans/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/opensans/opensans-semibold-webfont.woff') format('woff'),
+       url('fonts/opensans/opensans-semibold-webfont.ttf') format('truetype'),
+       url('fonts/opensans/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
 }
 @font-face {
   font-family: 'open_sans_italic';
-  src: url('fonts/opensans-italic-webfont.eot');
-  src: url('fonts/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/opensans-italic-webfont.woff') format('woff'),
-       url('fonts/opensans-italic-webfont.ttf') format('truetype'),
-       url('fonts/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+  src: url('fonts/opensans/opensans-italic-webfont.eot');
+  src: url('fonts/opensans/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/opensans/opensans-italic-webfont.woff') format('woff'),
+       url('fonts/opensans/opensans-italic-webfont.ttf') format('truetype'),
+       url('fonts/opensans/opensans-italic-webfont.svg#open_sansitalic') format('svg');
 }
 @font-face {
   font-family: 'open_sans';
-  src: url('fonts/opensans-regular-webfont.eot');
-  src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/opensans-regular-webfont.woff') format('woff'),
-       url('fonts/opensans-regular-webfont.ttf') format('truetype'),
-       url('fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+  src: url('fonts/opensans/opensans-regular-webfont.eot');
+  src: url('fonts/opensans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/opensans/opensans-regular-webfont.woff') format('woff'),
+       url('fonts/opensans/opensans-regular-webfont.ttf') format('truetype'),
+       url('fonts/opensans/opensans-regular-webfont.svg#open_sansregular') format('svg');
+}
+@font-face {
+  font-family: 'amble_light';
+  src: url('fonts/amble/amble-light-webfont.eot');
+  src: url('fonts/amble/amble-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/amble/amble-light-webfont.woff') format('woff'),
+       url('fonts/amble/amble-light-webfont.ttf') format('truetype'),
+       url('fonts/amble/amble-light-webfont.svg#open_sansitalic') format('svg');
+}
+@font-face {
+  font-family: 'amble';
+  src: url('fonts/amble/amble-regular-webfont.eot');
+  src: url('fonts/amble/amble-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/amble/amble-regular-webfont.woff') format('woff'),
+       url('fonts/amble/amble-regular-webfont.ttf') format('truetype'),
+       url('fonts/amble/amble-regular-webfont.svg#open_sansregular') format('svg');
+}
+@font-face {
+  font-family: 'amble_bold';
+  src: url('fonts/amble/amble-bold-webfont.eot');
+  src: url('fonts/amble/amble-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/amble/amble-bold-webfont.woff') format('woff'),
+       url('fonts/amble/amble-bold-webfont.ttf') format('truetype'),
+       url('fonts/amble/amble-bold-webfont.svg#open_sansitalic') format('svg');
 }
 @font-face {
   font-family: 'fjalla';
-  src: url('fonts/fjallaone-regular-webfont.eot');
-  src: url('fonts/fjallaone-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/fjallaone-regular-webfont.woff') format('woff'),
-       url('fonts/fjallaone-regular-webfont.ttf') format('truetype'),
-       url('fonts/fjallaone-regular-webfont.svg#fjallaoneregular') format('svg');
+  src: url('fonts/fjallaone/fjallaone-regular-webfont.eot');
+  src: url('fonts/fjallaone/fjallaone-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/fjallaone/fjallaone-regular-webfont.woff') format('woff'),
+       url('fonts/fjallaone/fjallaone-regular-webfont.ttf') format('truetype'),
+       url('fonts/fjallaone/fjallaone-regular-webfont.svg#fjallaoneregular') format('svg');
 }

@@ -20,7 +20,7 @@ var ArtistDetailView = Backbone.View.extend({
     $.when($el.append(html(_.extend(this.model.toJSON())))).then(function() {
       view.setElement($(".artist-details"));
     });
-    this.setOverflow();
+    //this.setOverflow();
   },
 
   events: {
